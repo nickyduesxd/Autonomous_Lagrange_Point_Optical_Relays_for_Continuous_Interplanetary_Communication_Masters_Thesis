@@ -1,0 +1,35 @@
+{
+  "solar_conjunction": true,
+  "failure_recovery": 0.1,
+  "traffic_overload": 0.0,
+  "orbital_configs": {
+    "Conjunction": {
+      "earth_mars_distance": 2.52,
+      "earth_connectivity": 100.0,
+      "mars_connectivity": 100.0,
+      "interplanetary_links": 102,
+      "average_latency": 1303.2110371495114
+    },
+    "Quadrature": {
+      "earth_mars_distance": 1.8194504664870654,
+      "earth_connectivity": 100.0,
+      "mars_connectivity": 100.0,
+      "interplanetary_links": 110,
+      "average_latency": 1521.753317608921
+    },
+    "Opposition": {
+      "earth_mars_distance": 0.52,
+      "earth_connectivity": 100.0,
+      "mars_connectivity": 100.0,
+      "interplanetary_links": 118,
+      "average_latency": 2442.76213090845
+    },
+    "Near-Conjunction": {
+      "earth_mars_distance": 2.4378509444805467,
+      "earth_connectivity": 100.0,
+      "mars_connectivity": 100.0,
+      "interplanetary_links": 62,
+      "average_latency": 1521.9513135708837
+    }
+  }
+}

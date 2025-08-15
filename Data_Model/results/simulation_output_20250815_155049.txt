@@ -1,0 +1,158 @@
+
+ENHANCED FREE SPACE OPTICAL INTERPLANETARY NETWORK SIMULATION
+   with Controller Coordination & Traffic Management
+   Satellites: 8 Earth, 4 Mars
+   Controllers: 4 Earth-Moon Lagrange
+   Relays: 4 Earth-Sun, 4 Mars-Sun
+   Duration: 20000 hours, Step: 24.0 hours
+============================================================
+
+
+================================================================================
+SOLAR CONJUNCTION TEST
+================================================================================
+  Earth position: [1.00, 0.00, 0.00] AU
+  Mars position: [-1.52, 0.00, 0.00] AU
+  Earth-Mars separation: 2.52 AU
+
+Updating satellite positions for conjunction
+
+Direct Earth-Mars Communication:
+   E1 -> M1: BLOCKED by Sun
+
+2Earth to Earth-Sun Relay Connections:
+   E1 -> ER1 (Earth-Sun-L1): CLEAR [0.010 AU]
+   E1 -> ER2 (Earth-Sun-L2): CLEAR [0.010 AU]
+   E1 -> ER3 (Earth-Sun-L4): CLEAR [1.000 AU]
+   E1 -> ER4 (Earth-Sun-L5): CLEAR [1.000 AU]
+
+Mars to Mars-Sun Relay Connections:
+   M1 -> MR1 (Mars-Sun-L1): CLEAR [0.015 AU]
+   M1 -> MR2 (Mars-Sun-L2): CLEAR [0.015 AU]
+   M1 -> MR3 (Mars-Sun-L4): CLEAR [1.520 AU]
+   M1 -> MR4 (Mars-Sun-L5): CLEAR [1.520 AU]
+
+Critical Inter-Relay Connections:
+   ER1 (Earth-Sun-L1) -> MR1 (Mars-Sun-L1): BLOCKED by Sun [2.495 AU]
+   ER1 (Earth-Sun-L1) -> MR2 (Mars-Sun-L2): BLOCKED by Sun [2.525 AU]
+   ER1 (Earth-Sun-L1) -> MR3 (Mars-Sun-L4): CLEAR [2.190 AU]
+   ER1 (Earth-Sun-L1) -> MR4 (Mars-Sun-L5): CLEAR [2.190 AU]
+   ER2 (Earth-Sun-L2) -> MR1 (Mars-Sun-L1): BLOCKED by Sun [2.515 AU]
+   ER2 (Earth-Sun-L2) -> MR2 (Mars-Sun-L2): BLOCKED by Sun [2.545 AU]
+   ER2 (Earth-Sun-L2) -> MR3 (Mars-Sun-L4): CLEAR [2.206 AU]
+   ER2 (Earth-Sun-L2) -> MR4 (Mars-Sun-L5): CLEAR [2.206 AU]
+   ER3 (Earth-Sun-L4) -> MR1 (Mars-Sun-L1): CLEAR [2.184 AU]
+   ER3 (Earth-Sun-L4) -> MR2 (Mars-Sun-L2): CLEAR [2.212 AU]
+   ER3 (Earth-Sun-L4) -> MR3 (Mars-Sun-L4): BLOCKED by Sun [2.520 AU]
+   ER3 (Earth-Sun-L4) -> MR4 (Mars-Sun-L5): CLEAR [1.338 AU]
+   ER4 (Earth-Sun-L5) -> MR1 (Mars-Sun-L1): CLEAR [2.184 AU]
+   ER4 (Earth-Sun-L5) -> MR2 (Mars-Sun-L2): CLEAR [2.212 AU]
+   ER4 (Earth-Sun-L5) -> MR3 (Mars-Sun-L4): CLEAR [1.338 AU]
+   ER4 (Earth-Sun-L5) -> MR4 (Mars-Sun-L5): BLOCKED by Sun [2.520 AU]
+
+Alternative Paths Analysis:
+   Earth-L4 to Mars-L4: BLOCKED by Sun [2.520 AU]
+   Earth-L4 to Mars-L5: AVAILABLE [1.338 AU]
+   Earth-L5 to Mars-L4: AVAILABLE [1.338 AU]
+   Earth-L5 to Mars-L5: BLOCKED by Sun [2.520 AU]
+
+SOLAR CONJUNCTION CONNECTIVITY SUMMARY:
+   Direct Earth-Mars communication: BLOCKED
+   Working relay paths found: 10
+   L4/L5 alternative paths: 2
+
+   NETWORK MAINTAINS CONNECTIVITY through:
+      ER1 -> MR3 (2.190 AU)
+      ER1 -> MR4 (2.190 AU)
+      ER2 -> MR3 (2.206 AU)
+
+DATA ACCUMULATION ESTIMATE:
+   Conjunction duration: 14 days
+   Mars daily data generation: 10 GB/day
+   Total data to cache: 140 GB
+   With L4/L5 paths: Real-time transmission possible (with 2 routes)
+
+SUCCESS: Network maintains Earth-Mars connectivity during solar conjunction
+Time Step 1/834: 2025-05-03 12:00 (t=0.0h)
+  Updating 24 satellites
+  Performing controller coordination with traffic management
+  Attempting FSO link establishments with traffic coordination
+  Total FSO acquisition attempts: 24, Coordinated transmissions: 0
+  Network graph: 0 edges added, 0 interplanetary, 0 controller, 0 traffic-coordinated
+  Graph stats: 24 nodes, 0 edges
+    M1 cannot reach Earth (this should not happen)
+    M2 cannot reach Earth (this should not happen)
+    M3 cannot reach Earth (this should not happen)
+    M4 cannot reach Earth (this should not happen)
+  Total paths found: 0
+  Earth satellites connected to Mars: 0
+  Mars satellites connected to Earth: 0
+Connectivity: Earth 0.0%, Mars 0.0%, Total 0.0%
+
+LINE-OF-SIGHT ANALYSIS:
+  Total potential links in range: 276
+  Blocked by Sun: 32
+  Blocked by Earth: 1
+  Blocked by Mars: 1
+  Blocked by Moon: 1
+  Clear links: 241
+  Blocking percentage: 12.7%
+
+NETWORK STATUS:
+  Connectivity: Earth 0.0%, Mars 0.0%
+  FSO Links: 0 active (0 nav-assisted, 0 traffic-coordinated)
+  Data Rate: 0.00 Tbps total
+  Interplanetary: 0 links @ 0.0 Gbps
+  Controllers: 0/4 active, 0.0% coverage
+  Traffic Mgmt: 0 scheduled, 0 authorized
+
+
+Time Step 2/834: 2025-05-04 12:00 (t=24.0h)
+  Updating 24 satellites
+  Performing controller coordination with traffic management
+    Controller C1: Coordinating 8 satellites, 0 handoffs planned, 8 transmissions scheduled
+  Attempting FSO link establishments with traffic coordination
+    CONTROLLER LINK: E1 -> C4
+    E5: Beginning coordinated transmission
+        Relay: ER1
+        Duration: 0.020h
+        Data Rate: 8.0 Gbps
+        Priority: HIGH
+    TRAFFIC SCHEDULED LINK: E6 -> ER2 (traffic coordinator assigned)
+    TRAFFIC SCHEDULED LINK: E7 -> ER3 (traffic coordinator assigned)
+    CONTROLLER-RELAY: C1 -> ER1
+    CONTROLLER-RELAY: C2 -> ER1
+    CONTROLLER-RELAY: C3 -> ER1
+    CONTROLLER-RELAY: C4 -> ER1
+  Total FSO acquisition attempts: 51, Coordinated transmissions: 1
+  Network graph: 13 edges added, 2 interplanetary, 5 controller, 3 traffic-coordinated
+  Graph stats: 24 nodes, 13 edges
+    M1 cannot reach Earth (this should not happen)
+    M2 cannot reach Earth (this should not happen)
+    M3 cannot reach Earth (this should not happen)
+    M4 cannot reach Earth (this should not happen)
+  Total paths found: 0
+  Earth satellites connected to Mars: 0
+  Mars satellites connected to Earth: 0
+Connectivity: Earth 0.0%, Mars 0.0%, Total 0.0%
+
+LINE-OF-SIGHT ANALYSIS:
+  Total potential links in range: 276
+  Blocked by Sun: 32
+  Blocked by Earth: 0
+  Blocked by Mars: 0
+  Blocked by Moon: 0
+  Clear links: 244
+  Blocking percentage: 11.6%
+
+NETWORK STATUS:
+  Connectivity: Earth 0.0%, Mars 0.0%
+  FSO Links: 13 active (3 nav-assisted, 8 traffic-coordinated)
+  Data Rate: 0.01 Tbps total
+  Interplanetary: 5 links @ 5.0 Gbps
+  Controllers: 1/4 active, 100.0% coverage
+  Traffic Mgmt: 8 scheduled, 8 authorized
+
+
+Time Step 3/834: 2025-05-05 12:00 (t=48.0h)
+  Updating 24 satellites
