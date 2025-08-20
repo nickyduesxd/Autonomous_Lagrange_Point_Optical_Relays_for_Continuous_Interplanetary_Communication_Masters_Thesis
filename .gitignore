@@ -1,11 +1,11 @@
 # Ignore everything
-/*
+*
 
-# But keep these directories and their contents
-#!/Data_Model
-!/Data_Model/model.py
-!/Thesis_Paper
-#!/Thesis_Paper/**
+# But don't ignore the Data_Model directory
+!Data_Model/
 
-# Also keep the .gitignore file itself
-#!.gitignore
+# Ignore everything in Data_Model
+Data_Model/*
+
+# But don't ignore model_2.py in Data_Model
+!Data_Model/model_2.py
